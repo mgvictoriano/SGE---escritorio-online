@@ -2,6 +2,10 @@
 
 Sistema web de gestão para escritórios de advocacia, com módulos integrados para controle de processos, clientes, agenda, financeiro, documentos e mais.
 
+<img width="1874" height="904" alt="image" src="https://github.com/user-attachments/assets/e8810dd7-4911-40a8-a393-e1a865010899" />
+
+
+
 ## Visão Geral
 
 Aplicação SPA desenvolvida em React, com tema claro/escuro, voltada para a rotina de escritórios jurídicos.
