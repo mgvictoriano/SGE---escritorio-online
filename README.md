@@ -34,26 +34,52 @@ Aplicação SPA desenvolvida em React, com tema claro/escuro, voltada para a rot
 
 ```
 SGE - escritorio online/
-├── frontend/               # Interface (React)
+├── frontend/                   # Interface (React + Vite)
 │   └── src/
 │       ├── App.jsx
 │       ├── components/
-│       │   ├── shared/     # Componentes reutilizáveis
-│       │   └── ui/         # Componentes base (Button, Card, Input...)
-│       ├── constants/      # Dados, paleta de cores, domínios
-│       ├── modules/        # Módulos da aplicação
-│       └── utils/          # Utilitários (datas, prazos, auditoria)
-└── backend/                # API (em desenvolvimento)
+│       │   ├── shared/         # Componentes reutilizáveis
+│       │   └── ui/             # Componentes base (Button, Card, Input...)
+│       ├── constants/          # Dados, paleta de cores, domínios
+│       ├── modules/            # Módulos da aplicação
+│       └── utils/              # Utilitários (datas, prazos, auditoria)
+├── backend/                    # API REST (Java 21 + Spring Boot 3.4)
+│   ├── pom.xml
+│   ├── scripts/migration/      # Scripts SQL versionados (Flyway)
+│   └── src/main/java/com/sge/
+│       ├── SgeApplication.java
+│       ├── shared/
+│       │   ├── entity/         # BaseEntity (auditoria + versioning)
+│       │   └── config/         # JPA, Security
+│       └── modules/
+│           ├── endereco/
+│           ├── usuario/
+│           ├── cliente/
+│           └── processo/
+├── nginx/                      # Configuração do proxy reverso
+├── scripts/                    # Scripts de infraestrutura e backup
+└── docker-compose.yml          # Orquestração dos serviços
 ```
 
 ## Tecnologias
 
 ### Frontend
-- React
+- React 18 + Vite
 - CSS-in-JS com paleta dinâmica (tema claro/escuro)
 
 ### Backend
-- Em desenvolvimento
+- Java 21
+- Spring Boot 3.4 (Web, JPA, Security, Validation)
+- PostgreSQL 18 com multi-tenancy por schema
+- Flyway para migrations versionadas
+- JWT para autenticação
+- Lombok
+
+### Infraestrutura
+- Docker + Docker Compose
+- Nginx (proxy reverso + SSL)
+- VPS Ubuntu (Hostinger)
+- Backup automático via cron
 
 ## Autores
 
