@@ -1,0 +1,22 @@
+# Variáveis de ambiente (NUNCA subir para o GitHub)
+.env
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Java / Maven / Gradle
+backend/target/
+backend/build/
+backend/.gradle/
+*.jar
+*.war
+
+# IDEs
+.idea/
+*.iml
+.vscode/settings.json
+
+# OS
+.DS_Store
+Thumbs.db
