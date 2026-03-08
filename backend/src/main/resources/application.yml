@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: sge-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sge
+    username: sge_user
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate          # Flyway gerencia o schema, Hibernate só valida
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        default_schema: sge_victoriano
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    schemas: sge_victoriano
+    default-schema: sge_victoriano
+
+server:
+  port: 8080
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: 86400000            # 24 horas em ms
+
+logging:
+  level:
+    com.sge: DEBUG
+    org.springframework.security: INFO
